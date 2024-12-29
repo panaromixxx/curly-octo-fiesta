@@ -1,0 +1,32 @@
+{% extends 'core/base.html'%}
+{% block title %}Каталог{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    <div class="flex-wrap d-flex flex-row gap-3 justify-conent-center">
+    {% for movie in films %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{movie.poster.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="d-flex flex-column justify-content-between h-100">
+            <div class="">
+              <h5 class="card-title">{{movie.title}}</h5>
+              <span>Рейтинг:</span>
+              <span>{{movie.rating}}</span>
+              <p class="anekdot">
+                {%for genre in movie.genres.all%}
+                {{genre.name}}
+                {%endfor%}
+              </p>
+            </div>
+            <div class="">
+              <a href="{% url 'movie_detail' movie_id=movie.id %}" class="btn btn-primary d-block">Смотреть</a>
+              <span>{{movie.release_date}}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'core/base.html'%}
+{% block title %}Авторизация{% endblock %}
+{% load static %}
+{% block content %}
+<p>{{error}}</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <h2>Вход</h2>
+    
+    <label for="username">Никнейм:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    
+    <label for="password">Пароль:</label><br>
+    <input type="password" id="password" name="password" required><br>
+    
+    <button type="submit">Войти</button>
+</form>
+{% endblock %}

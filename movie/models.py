@@ -45,6 +45,7 @@ class Movie(models.Model):
     poster = models.ImageField(
         upload_to="movie/images/movies/posters/",
         blank=True, null=True)
+    storage = models.FileField(upload_to="movie/videos/", null=True, blank=True)
 
 
 class MovieReview(models.Model):

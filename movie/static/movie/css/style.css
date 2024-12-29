@@ -1,0 +1,82 @@
+.osnova {
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.ppls {
+
+}
+
+.opisanie {
+
+}
+
+
+body {
+    background-color: #333;
+    color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.osnova {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #38e680;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #2d9222;
+    padding: 20px;
+}
+
+.osnova h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.osnova img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.osnova p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.opisanie {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opisanie h5,
+.opisanie h2,
+.opisanie h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.ppls {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ppls h5 {
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    width: 100%;
+    margin-top: 30px;
+}

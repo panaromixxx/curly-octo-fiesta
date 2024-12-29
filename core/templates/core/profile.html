@@ -1,0 +1,8 @@
+{% extends 'core/base.html'%}
+{% block title %}Профиль пользователя{% endblock %}
+{% load static %}
+{% block content %}
+    <h2>Ваш профиль</h2>
+    <p><strong>Никнейм:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+{% endblock %}

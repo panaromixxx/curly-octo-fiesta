@@ -1,0 +1,44 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block title %} {{film.title}} {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'movie/css/style.css' %}">
+<div class="osnova">
+    <h1>{{film.title}}</h1>
+    <img src="{{ film.poster.url }}">
+    <p>{{ film.description }}</p>
+    <h1>{{ film.duration }} минут</h1>
+</div>
+<div class="opisanie">
+    <h5>{{ film.release_date }}</h5>
+    <h2>{{ film.rating }}</h2>
+    {% for genre in film.genres.all %}
+    <h3>{{ genre.name }}</h3>
+    {% endfor %}
+    <h5>{{ film.budget }} рублей</h5>
+</div>
+<div class="ppls">
+    {% for director in film.directors.all %}
+    <h5>{{ director.name }}</h5>
+    {% endfor %}
+    {% for actor in film.actors.all %}
+    <h5>{{ actor.name }}</h5>
+    {% endfor %}
+</div>
+<form method="post" action="{% url 'movie_review' %}">
+    {% csrf_token %}
+    <input type="hidden" value="{{film.id}}" name="movie_id">
+    <textarea type="text" placeholder="тест" name="text"></textarea>
+    <button type="submit">кнопка</button>
+</form>
+{% if film.storage.url != Null %}
+<video src="{{film.storage.url}}" controls></video>
+{% endif %}
+<div>
+    {% for review in film.reviews.all %}
+<h6>{{ review.author.username }}</h6>
+<p>{{ review.text }}</p>
+<span>{{ review.created_at }}</span>
+    {% endfor %}
+</div>
+{% endblock %}
